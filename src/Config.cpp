@@ -155,7 +155,13 @@ void resetConfig()
     Servos::Clear();
 #endif
 #if MF_STEPPER_SUPPORT == 1
+#if defined(STEPPER_ON_2ND_CORE) && defined(ARDUINO_ARCH_RP2040)
+    Stepper::stopUpdate2ndCore(true);
+#endif
     Stepper::Clear();
+#if defined(STEPPER_ON_2ND_CORE) && defined(ARDUINO_ARCH_RP2040)
+    Stepper::stopUpdate2ndCore(false);
+#endif
 #endif
 #if MF_LCD_SUPPORT == 1
     LCDDisplay::Clear();
@@ -173,7 +179,13 @@ void resetConfig()
     DigInMux::Clear();
 #endif
 #if MF_CUSTOMDEVICE_SUPPORT == 1
+#if defined(USE_2ND_CORE) && defined(ARDUINO_ARCH_RP2040)
+    CustomDevice::stopUpdate2ndCore(true);
+#endif
     CustomDevice::Clear();
+#if defined(USE_2ND_CORE) && defined(ARDUINO_ARCH_RP2040)
+    CustomDevice::stopUpdate2ndCore(false);
+#endif
 #endif
     configLengthEEPROM = 0;
     configActivated    = false;
