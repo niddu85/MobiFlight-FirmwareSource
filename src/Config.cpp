@@ -201,6 +201,7 @@ void OnResetConfig()
 
 void OnSaveConfig()
 {
+    MFeeprom.commit();
     cmdMessenger.sendCmd(kConfigSaved, F("OK"));
 }
 
