@@ -15,9 +15,17 @@ void MFLCDDisplay::display(const char *string)
 {
     if (!_initialized)
         return;
-    for (uint8_t line = 0; line != _lines; line++) {
-        _lcdDisplay.setCursor(0, line);
-        _lcdDisplay.writeString(&string[line * _cols], _cols);
+    
+    for (uint8_t line = 0; line != _lines; line++) 
+    {
+        for(uint8_t col = 0; col != _cols; col++)
+        {
+            _lcdDisplay.setCursor(col, line);
+            if(string[(line * _cols)+col] != '^')
+            {
+                _lcdDisplay.write(string[(line * _cols)+col]);
+            }
+        }
     }
 }
 
