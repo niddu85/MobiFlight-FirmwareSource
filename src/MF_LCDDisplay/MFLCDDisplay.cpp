@@ -20,9 +20,9 @@ void MFLCDDisplay::display(const char *string)
     {
         for(uint8_t col = 0; col != _cols; col++)
         {
-            _lcdDisplay.setCursor(col, line);
-            if(string[(line * _cols)+col] != '^')
+            if(string[(line * _cols)+col] != 28) //character 'FS' (File separator), surelly not used by users
             {
+                _lcdDisplay.setCursor(col, line);
                 _lcdDisplay.write(string[(line * _cols)+col]);
             }
         }
