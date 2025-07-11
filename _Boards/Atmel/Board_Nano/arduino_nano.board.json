@@ -14,7 +14,7 @@
     "EEPROMSize": 286,
     "ExtraConnectionRetry": true,
     "ForceResetOnFirmwareUpdate": false,
-    "MessageSize": 64,
+    "MessageSize": 90,
     "TimeoutForFirmwareUpdate": 60000
   },
   "HardwareIds": [
@@ -33,9 +33,15 @@
     "FirmwareBaseName": "mobiflight_nano",
     "FirmwareExtension": "hex",
     "FriendlyName": "Arduino Nano",
-    "LatestFirmwareVersion": "2.5.2",
+    "LatestFirmwareVersion": "0.0.1",
     "MobiFlightType": "MobiFlight Nano",
-    "ResetFirmwareFile": "reset.arduino_uno_1_0_2.hex"
+    "ResetFirmwareFile": "reset.arduino_uno_1_0_2.hex",
+    "Community": {
+      "Project": "MobiFlight Nano",
+      "Website": "https://mobiflight.com/links/connector/info/website/nano.html",
+      "Docs": "https://mobiflight.com/links/connector/info/docs/nano.html",
+      "Support": "https://mobiflight.com/discord"
+    }
   },
   "ModuleLimits": {
     "MaxAnalogInputs": 8,
